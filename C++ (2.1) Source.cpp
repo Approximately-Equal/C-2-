@@ -2,6 +2,8 @@
 #include <cmath>
 #include <iostream>
 
+using namespace std;
+
 Car::Car(double x_, double y_, double fuelTank_, double fuelEfficiency_){
     x = x_;
     y = y_;
@@ -60,4 +62,16 @@ int Car::moveTo(double dstX, double dstY){
         return 1;
     }
     return 0;
+}
+
+MedicalCenter::MedicalCenter() {
+    providers = new list<Provider>;
+    patients = new list<Patient>;
+}
+
+void MedicalCenter::appendPatient(Patient patient_) {
+    patients.append(patient_);
+}
+void MedicalCenter::appendProvider(Provider provider_) {
+    providers.append(provider_);
 }
